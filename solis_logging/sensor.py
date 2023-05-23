@@ -44,21 +44,19 @@ class SolisDataPowerSensor(Entity):
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(url, auth=aiohttp.BasicAuth(self._username, self._password), timeout=self._timeout) as response:
-                    if response.status == 200:
+                    if response and response.status == 200:
                         data = await response.text()
                         start_index = data.find("var webdata_now_p")
                         end_index = data.find(";", start_index)
                         value_str = data[start_index:end_index]
                         self._state = int(value_str.split("=")[1].strip(' "'))
                     else:
-                        _LOGGER.warning("Failed to fetch data from Solis Data Logging Stick. Status code: %d", response.status)
-                        self._state = None
+#                        _LOGGER.warning("Failed to fetch data from Solis Data Logging Stick. Status code: %d", response.status if response else None)
+                        self._state = 0
 
-        except (aiohttp.ClientError, aiohttp.ServerConnectionError, aiohttp.ClientConnectorError) as ex:
+#        except (aiohttp.ClientError, aiohttp.ServerConnectionError, aiohttp.ClientConnectorError) as ex:
+        except Exception as ex:
 #            _LOGGER.error("Error fetching data from Solis Data Logging Stick: %s", ex)
-            self._state = 0
-        except asyncio.TimeoutError as ex:
-#            _LOGGER.error("Timeout error fetching data from Solis Data Logging Stick: %s", ex)
             self._state = 0
 
     @property
@@ -75,4 +73,3 @@ class SolisDataPowerSensor(Entity):
     def unit_of_measurement(self):
         """Return the unit of measurement of the sensor."""
         return POWER_WATT
-
