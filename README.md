@@ -1,9 +1,9 @@
 # solis_logging
-Inversor Solis - Solis Data Logging Stick
+### Inversor - Solis Data Logging Stick
 
-Envie a pasta solis_logging para /config/custom_components/
+Envie a pasta solis_logging para <b>/config/custom_components/</b>
 
-Edite /config/configuration.yaml
+Edite <b>/config/configuration.yaml</b>
 ```
 solis_logging:
   name: Solis Data Power
@@ -16,13 +16,13 @@ solis_logging:
 ```
 Default Confs:
 ```
-DEFAULT NAME = "Solis Data Power"
-DEFAULT TIMEOUT = 10
-DEFAULT RETRIES = 2
-DEFAULT INTERVAL = 60
-DEFAULT IP_ADDRESS = "192.168.1.20"
-DEFAULT USERNAME = "admin"
-DEFAULT PASSWORD = "admin"
+NAME = "Solis Data Power"
+TIMEOUT = 10
+RETRIES = 2
+INTERVAL = 60
+IP_ADDRESS = "192.168.1.20"
+USERNAME = "admin"
+PASSWORD = "admin"
 ```
 
 Reinicie seu Home Assistant
