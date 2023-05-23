@@ -1,7 +1,7 @@
 # solis_logging
 ### Inversor - Solis Data Logging Stick
 
-Envie a pasta solis_logging para <b>/config/custom_components/</b>
+Envie a pasta <b>solis_logging</b> para <b>/config/custom_components/</b>
 
 Edite <b>/config/configuration.yaml</b>
 ```
