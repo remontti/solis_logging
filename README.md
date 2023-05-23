@@ -1,13 +1,15 @@
 # solis_logging
 ### Inversor - Solis Data Logging Stick
 
-Envie a pasta <b>solis_logging</b> para <b>/config/custom_components/</b>
+Capturando infomações via LAN, ao configurar o Data Log na rede é possivel acessar via HTTP qual fornece o valor da geração com atualizações de ~1min o que gera uma coleta/gráfico para HA mais exata.
 
-Edite <b>/config/configuration.yaml</b>
+Basta enviar a pasta <b>solis_logging</b> para <b>/config/custom_components/</b>
+
+Edite <b>/config/configuration.yaml</b> informado os dados corretos do seu Data Logging.
 ```
 solis_logging:
   name: Solis Data Power
-  ip_address: 192.168.97.2
+  ip_address: 192.168.97.2 
   username: admin
   password: admin
   timeout: 10
