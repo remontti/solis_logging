@@ -11,8 +11,8 @@ solis_logging:
   username: admin
   password: admin
   timeout: 10
-  retries: 1
-  interval: 30
+  retries: 2
+  interval: 60
 ```
 Default Confs:
 ```
