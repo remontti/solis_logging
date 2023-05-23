@@ -51,12 +51,9 @@ class SolisDataPowerSensor(Entity):
                         value_str = data[start_index:end_index]
                         self._state = int(value_str.split("=")[1].strip(' "'))
                     else:
-#                        _LOGGER.warning("Failed to fetch data from Solis Data Logging Stick. Status code: %d", response.status if response else None)
                         self._state = 0
 
-#        except (aiohttp.ClientError, aiohttp.ServerConnectionError, aiohttp.ClientConnectorError) as ex:
         except Exception as ex:
-#            _LOGGER.error("Error fetching data from Solis Data Logging Stick: %s", ex)
             self._state = 0
 
     @property
@@ -73,3 +70,9 @@ class SolisDataPowerSensor(Entity):
     def unit_of_measurement(self):
         """Return the unit of measurement of the sensor."""
         return POWER_WATT
+
+    @property
+    def device_class(self):
+        """Return the device class of the sensor."""
+        return "power"
+
