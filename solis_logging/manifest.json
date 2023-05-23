@@ -1,0 +1,10 @@
+{
+  "domain": "solis_logging",
+  "name": "Solis Logging",
+  "documentation": "https://github.com/remontti/solis_logging/",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": [],
+  "version": "1.0"
+}
+
