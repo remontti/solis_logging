@@ -29,4 +29,4 @@ PASSWORD = "admin"
 
 Reinicie seu Home Assistant
 
-<img src="https://raw.githubusercontent.com/remontti/solis_logging/main/imgs/web.png">
+<img src="https://raw.githubusercontent.com/remontti/solis_logging/main/imgs/solis.png">
