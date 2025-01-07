@@ -6,7 +6,8 @@ import voluptuous as vol
 from homeassistant.const import CONF_NAME
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.typing import HomeAssistantType, ConfigType
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.typing import ConfigType
 
 from .const import DOMAIN, DEFAULT_NAME, DEFAULT_IP_ADDRESS, DEFAULT_USERNAME, DEFAULT_PASSWORD, DEFAULT_TIMEOUT, DEFAULT_RETRIES, DEFAULT_INTERVAL
 
@@ -29,7 +30,7 @@ CONFIG_SCHEMA = vol.Schema(
     extra=vol.ALLOW_EXTRA,
 )
 
-def setup(hass: HomeAssistantType, config: ConfigType) -> bool:
+def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Set up the Solis Logging component."""
     conf = config.get(DOMAIN)
 
@@ -57,4 +58,3 @@ def setup(hass: HomeAssistantType, config: ConfigType) -> bool:
     load_platform(hass, "sensor", DOMAIN, {}, config)
 
     return True
-
