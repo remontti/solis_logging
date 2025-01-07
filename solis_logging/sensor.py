@@ -2,7 +2,6 @@
 import logging
 
 from homeassistant.components.sensor import PLATFORM_SCHEMA
-from homeassistant.const import POWER_WATT
 from homeassistant.helpers.entity import Entity
 
 from .const import DOMAIN
@@ -69,10 +68,9 @@ class SolisDataPowerSensor(Entity):
     @property
     def unit_of_measurement(self):
         """Return the unit of measurement of the sensor."""
-        return POWER_WATT
+        return "W"  # Unidade de medida literal substituindo POWER_WATT
 
     @property
     def device_class(self):
         """Return the device class of the sensor."""
         return "power"
-
